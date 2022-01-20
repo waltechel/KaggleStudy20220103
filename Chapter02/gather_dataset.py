@@ -83,4 +83,4 @@ while cap.isOpened():
 
 # 데이터를 저장합니다. 
 # 데이터가 수집되면 여기로 들어오는데 여기로 들어오게 하면 안되고 내 위치에 맞게 경로 바꿈
-# np.savetxt('Chapter02\data\gesture_train_fy.csv', file, delimiter=',')
+np.savetxt('Chapter02\data\gesture_train_fy.csv', file, delimiter=',')

@@ -21,7 +21,7 @@ rps_gesture = {0:'rock', 5:'paper', 2:'scissors', 9:'scissors'}
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
-# 손가락 볼륨 조절기
+# 손가락 볼륨 조절기에서 가져옴
 hands = mp_hands.Hands(
     max_num_hands=max_num_hands,
     min_detection_confidence=0.5,

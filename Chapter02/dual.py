@@ -23,7 +23,9 @@ hands = mp_hands.Hands(
     min_tracking_confidence=0.5)
 
 # Gesture recognition model
-file = np.genfromtxt('Chapter02\data\gesture_train.csv', delimiter=',')
+# 찌를 하나 더 넣어줌. 검지와 중지는 찌로 판정하는데 엄지와 검지를 찌로 판정하지 않음
+# 데이터가 없는 것으로 보인다.
+file = np.genfromtxt('Chapter02\data\gesture_train_add2.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
 knn = cv2.ml.KNearest_create()

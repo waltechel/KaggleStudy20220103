@@ -1,1 +1,1 @@
-mediapipe
+print("label ", label )
