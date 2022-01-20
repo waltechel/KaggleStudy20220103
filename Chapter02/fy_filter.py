@@ -22,6 +22,7 @@ hands = mp_hands.Hands(
 file = np.genfromtxt('Chapter02\data\gesture_train_fy.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
+# KNN 알고리즘(이게 생각보다 되게 효과 좋고, 빠름)
 knn = cv2.ml.KNearest_create()
 knn.train(angle, cv2.ml.ROW_SAMPLE, label)
 
