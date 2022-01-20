@@ -19,13 +19,14 @@ hands = mp_hands.Hands(
 
 # 제스처 인식 모델
 # Gesture recognition model
-file = np.genfromtxt('Chapter02\data\gesture_train.csv', delimiter=',')
+file = np.genfromtxt('Chapter02\data\gesture_train_fy.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
 knn = cv2.ml.KNearest_create()
 knn.train(angle, cv2.ml.ROW_SAMPLE, label)
 
 # 웹캠에서 이미지를 가져온다
+# 소스 실행하면 대번에 뜨지는 않음
 cap = cv2.VideoCapture(0)
 
 while cap.isOpened():

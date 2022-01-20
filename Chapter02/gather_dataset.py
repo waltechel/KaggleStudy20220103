@@ -1,3 +1,4 @@
+# openCV import
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -5,6 +6,7 @@ import numpy as np
 max_num_hands = 1
 gesture = {
     0:'fist', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five',
+    ## 11번이 뻐큐
     6:'six', 7:'rock', 8:'spiderman', 9:'yeah', 10:'ok', 11:'fy'
 }
 
@@ -30,6 +32,8 @@ def click(event, x, y, flags, param):
     global data, file
     if event == cv2.EVENT_LBUTTONDOWN:
         file = np.vstack((file, data))
+        # file = np.concatenate((file, data), axis=1)
+        # ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
         print(file.shape)
 
 cv2.namedWindow('Dataset')
@@ -78,5 +82,5 @@ while cap.isOpened():
         break
 
 # 데이터를 저장합니다. 
-# 데이터가 수집되면 여기로 들어오는데 여기로 들어오게 하면 안되고
-np.savetxt('Chapter02\data\gesture_train_fy.csv', file, delimiter=',')
+# 데이터가 수집되면 여기로 들어오는데 여기로 들어오게 하면 안되고 내 위치에 맞게 경로 바꿈
+# np.savetxt('Chapter02\data\gesture_train_fy.csv', file, delimiter=',')
